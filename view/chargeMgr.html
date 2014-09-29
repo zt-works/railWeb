@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    #include("/baseUrl.html")
+    <!--<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <base id="baseUrl" href="http://localhost/railWeb/">-->
+
+    <link type="text/css" rel="stylesheet" href="css/lib/jquery.toastmessage.css">
+    <link type="text/css" rel="stylesheet" href="css/lib/jquery.dataTables.css">
+    <link type="text/css" rel="stylesheet" href="css/src/common.css">
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/juicer-min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/src/config.js"></script>
+    <script type="text/javascript" src="js/src/chargeMgr.js"></script>
+    <script>
+        var href="s/bizPack";
+    </script>
+</head>
+<body>
+
+#include("/header.html")
+<!--<div class="topHeader">
+    <h1 class="logo">
+        <a href="#">
+            长沙铁通
+        </a>
+    </h1>
+</div>-->
+
+<div class="main">
+
+    #include("/menu.html")
+    <!--<div class="verticalMenu" id="menu">
+        <ul>
+            <li><a href="s/bizPack">订单管理</a></li>
+            <li><a href="s/user">用户管理</a></li>
+            <li><a href="s/orderItem">套餐管理</a></li>
+        </ul>
+    </div>-->
+
+    <div class="content">
+        <div class="row">
+            <input type="text" class="searchTxt txt" id="searchContent">
+        </div>
+        <table id="chargeTable">
+            <thead>
+            <tr>
+                <th>套餐</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>金额</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+#include("/footer.html")
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    #include("/baseUrl.html")
+    <!--<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <base id="baseUrl" href="http://localhost/railWeb/">-->
+
+
+    <link type="text/css" rel="stylesheet" href="css/lib/jquery.toastmessage.css">
+    <link type="text/css" rel="stylesheet" href="css/src/common.css">
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="js/lib/juicer-min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="js/src/config.js"></script>
+    <script type="text/javascript" src="js/src/emailMgr.js"></script>
+    <script>
+        var href="s/notifyEmail";
+    </script>
+</head>
+<body>
+
+<script type="text/template" id="emailTrTpl">
+    <tr>
+        <td>${email}</td>
+        <td>${fullname}</td>
+        <td>
+            <a href="${email}" class="delete">删除</a>
+        </td>
+    </tr>
+</script>
+
+#include("/header.html")
+<!--<div class="topHeader">
+    <h1 class="logo">
+        <a href="#">
+            长沙铁通
+        </a>
+    </h1>
+</div>-->
+
+<div class="main">
+
+     #include("/menu.html")
+    <!--<div class="verticalMenu" id="menu">
+        <ul>
+            <li><a href="s/bizPack">订单管理</a></li>
+            <li><a href="s/user">用户管理</a></li>
+            <li><a href="s/orderItem">套餐管理</a></li>
+            <li><a href="s/notifyEmail">邮箱管理</a></li>
+        </ul>
+    </div>-->
+
+    <div class="content">
+        <div class="row">
+            <form action="s/notifyEmail/addNotifyEmail" method="post" id="emailCreateForm">
+                <label>邮箱</label>
+                <input name="email" id="email" type="text" class="txt txtWidthLimit200">
+                <label>姓名</label>
+                <input name="fullname" id="fullname" class="txt txtWidthLimit200">
+                <input type="submit" class="btn" value="添加">
+            </form>
+        </div>
+
+        <table id="emailTable" class="dataTable">
+            <thead>
+            <tr>
+                <th>邮箱</th>
+                <th>姓名</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>
+                <td class="stageName">${person.email}</td>
+                <td>${person.fullname}</td>
+                <td>
+                    <a href="${person.email}" class="delete">删除</a>
+                </td>
+            </tr>-->
+            #foreach( $person in $emailList)
+            <tr>
+                <td>${person.email}</td>
+                <td>${person.fullname}</td>
+                <td>
+                    <a href="${person.email}" class="delete">删除</a>
+                </td>
+            </tr>
+            #end
+            </tbody>
+        </table>
+    </div>
+</div>
+
+#include("/footer.html")
+
+</body>
+</html>

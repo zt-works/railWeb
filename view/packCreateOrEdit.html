@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    #include("/baseUrl.html")
+    <!--<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <base id="baseUrl" href="http://localhost/railWeb/">-->
+
+    <link href="css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
+    <link href="css/src/common.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="js/src/config.js"></script>
+    <script type="text/javascript" src="js/src/packCreateOrEdit.js"></script>
+    <script>
+        var href="s/bizPack";
+    </script>
+</head>
+<body>
+
+#include("/header.html")
+<!--<div class="topHeader">
+    <h1 class="logo">
+        <a href="#">
+            长沙铁通
+        </a>
+    </h1>
+</div>-->
+
+<div class="main">
+     #include("/menu.html")
+    <!--<div class="verticalMenu" id="menu">
+        <ul>
+            <li><a href="s/bizPack">订单管理</a></li>
+            <li><a href="s/user">用户管理</a></li>
+            <li><a href="s/orderItem">套餐管理</a></li>
+        </ul>
+    </div>-->
+    <div class="content">
+        #if($pack.id)
+            <form action="s/bizPack/edit/$!{pack.id}" method="post" id="packCreateForm">
+        #else
+            <form action="s/bizPack/add" method="post" id="packCreateForm">
+        #end
+            <!--<form action="s/bizPack/add" method="post" id="packCreateForm">-->
+            <div class="row">
+                <label class="labelTxt" for="name">名称</label>
+                <input class="txt" id="name" type="text" name="name" value="$!{pack.name}">
+                <span class="requiredFlag">*</span>
+            </div>
+            <div class="row">
+                <label class="labelTxt" for="bandwidth">带宽</label>
+                <input class="txt" id="bandwidth"  type="text" name="bandwidth" value="$!{pack.bandwidth}">
+                <span class="unit">M</span>
+            </div>
+            <div class="row">
+                <label class="labelTxt" for="duration">使用期限</label>
+                <input class="txt" id="duration" type="text" name="duration" value="$!{pack.duration}">
+                <span class="unit">月</span>
+                <span class="requiredFlag">*</span>
+            </div>
+            <div class="row">
+                <label class="labelTxt" for="price">价格</label>
+                <input class="txt" id="price" type="text" name="price" value="$!{pack.price}">
+                <span class="requiredFlag">*</span>
+            </div>
+            <div class="row">
+                <label class="labelTxt" for="category">类别</label>
+
+                #set($categories=[
+                {"text":"宽带","value":"1"},
+                {"text":"光纤","value":"2"},
+                {"text":"TD无线固话","value":"3"}
+                ])
+
+                <select id="category" name="category" class="txt">
+                    #foreach($ca in $categories)
+                        #if($ca.value==$pack.category)
+                            <option value="${ca.value}" selected>${ca.text}</option>
+                        #else
+                            <option value="${ca.value}">${ca.text}</option>
+                        #end
+                    #end
+                </select>
+                <span class="requiredFlag">*</span>
+            </div>
+            <div class="row">
+                <label class="labelTxt" for="detail">优惠信息</label>
+                <textarea class="txtarea txt" name="detail" id="detail">$!{pack.detail}</textarea>
+            </div>
+            <div class="row">
+                <input type="submit" value="确定" class="btn submitBtn">
+            </div>
+        </form>
+    </div>
+</div>
+
+#include("/footer.html")
+
+</body>
+</html>

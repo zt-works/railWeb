@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("/baseUrl.html")
+    <!--<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <base id="baseUrl" href="http://localhost/railWeb/">-->
+
+
+    <link href="css/src/common.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/src/config.js"></script>
+    <script type="text/javascript" src="js/src/login.js"></script>
+    <script>
+        var href="";
+    </script>
+</head>
+<body>
+
+#include("/header.html")
+<!--<div class="topHeader">
+    <h1 class="logo">
+        <a href="#">
+            长沙铁通
+        </a>
+    </h1>
+</div>-->
+
+<div class="main">
+    <div class="verticalMenu">
+        <ul>
+            <li><a href="s/login" class="active">登录</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <form action="s/login" method="post" id="loginForm" class="login">
+            <div class="row">
+                <label class="labelTxt" for="loginUsername">用户名</label>
+                <input class="txt" id="loginUsername" type="text" name="username" >
+            </div>
+            <div class="row">
+                <label class="labelTxt" for="loginPwd">密码</label>
+                <input class="txt" id="loginPwd" name="password" type="password">
+            </div>
+            <div class="row">
+                <input type="submit" value="登 录" class="btn submitBtn">
+            </div>
+
+           <!-- #if($errorCode=="timeout")
+            <div class="row">
+                <span class="txtRed hasLeftMargin">登录超时，请刷新页面重新登录！</span>
+            </div>
+            #elseif($errorCode=="captcha_unmatch")
+            <div class="row">
+                <span class="txtRed hasLeftMargin">验证码错误！</span>
+            </div>
+            #elseif($errorCode=="account_inactive")
+            <div class="row">
+                <span class="txtRed hasLeftMargin">账户没有激活！</span>
+            </div>
+            #elseif($errorCode=="account_authenticate")
+            <div class="row">
+                <span class="txtRed hasLeftMargin">用户名或者密码错误！</span>
+            </div>
+            #end-->
+        </form>
+    </div>
+
+</div>
+
+#include("/footer.html")
+
+</body>
+</html>

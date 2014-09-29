@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    #include("/baseUrl.html")
+    <!--<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <base id="baseUrl" href="http://localhost/railWeb/">-->
+
+    <link href="css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
+    <link href="css/src/common.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="js/src/config.js"></script>
+    <script type="text/javascript" src="js/src/userEdit.js"></script>
+    <script>
+        var href="s/user";
+    </script>
+</head>
+<body>
+
+#include("/header.html")
+<!--<div class="topHeader">
+    <h1 class="logo">
+        <a href="#">
+            长沙铁通
+        </a>
+    </h1>
+</div>-->
+<div class="main">
+    #include("/menu.html")
+    <!--<div class="verticalMenu" id="menu">
+        <ul>
+            <li><a href="s/bizPack">订单管理</a></li>
+            <li><a href="s/user">用户管理</a></li>
+            <li><a href="s/orderItem">套餐管理</a></li>
+            <li><a href="s/notifyEmail">邮箱管理</a></li>
+        </ul>
+    </div>-->
+    <div class="content">
+        <ul class="tab" id="tab">
+            <li class="tabItem active"><a href="#infoPanel">基本信息</a></li>
+            <li class="tabItem"><a href="#pwdPanel">密码</a></li>
+        </ul>
+        <div id="infoPanel" class="tabPanel">
+            <form action="s/user/edit/$!{user.id}" method="post" id="userEditForm">
+                <input type="hidden" value="{}" name="detail">
+                <div class="row">
+                    <label class="labelTxt" for="username">用户名</label>
+                    <label class="labelTxt" id="username">$!{user.username}</label>
+                </div>
+                <div class="row">
+                    <label class="labelTxt" for="fullName">姓名</label>
+                    <input class="txt" id="fullName" type="text" name="fullname"  value="$!{user.fullname}">
+                </div>
+                <div class="row">
+                    <label class="labelTxt" for="mobile">联系电话</label>
+                    <input class="txt" id="mobile" type="text" name="mobile" value="$!{user.mobile}">
+                </div>
+                <div class="row">
+                    <label class="labelTxt" for="role">角色</label>
+                    <select id="role" name="role" class="txt">
+                        <option value="proxy">代理</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <input type="submit" value="确定" class="btn submitBtn">
+                </div>
+            </form>
+        </div>
+
+        <div id="pwdPanel"  class="tabPanel hidden">
+            <form action="s/user/setPassword/$!{user.id}" method="post" id="userPwdForm">
+                <div class="row">
+                    <label class="labelTxt" for="pwd">密码</label>
+                    <input class="txt" id="pwd" name="password" type="password">
+                </div>
+                <div class="row">
+                    <label class="labelTxt" for="confirmPwd">确认密码</label>
+                    <input class="txt" id="confirmPwd" name="confirmPwd" type="password">
+                </div>
+                <div class="row">
+                    <input type="submit" value="确定" class="btn submitBtn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+#include("/footer.html")
+
+</body>
+</html>

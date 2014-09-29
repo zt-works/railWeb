@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    #include("/baseUrl.html")
+    <!--<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <base id="baseUrl" href="http://localhost/railWeb/">-->
+
+    <link type="text/css" rel="stylesheet" href="css/lib/jquery.toastmessage.css">
+    <link type="text/css" rel="stylesheet" href="css/lib/jquery.dataTables.css">
+    <link type="text/css" rel="stylesheet" href="css/lib/date_input.css">
+    <link type="text/css" rel="stylesheet" href="css/src/common.css">
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/juicer-min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.date_input.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/src/config.js"></script>
+    <script type="text/javascript" src="js/src/orderMgr.js"></script>
+    <script>
+        var href="s/orderItem";
+    </script>
+</head>
+<body>
+
+<script type="text/template" id="optFormTpl">
+    <form action="s/orderItem/check/${orderId}" type="post" id="orderOptForm">
+        <div class="row">
+            <label class="labelTxt" for="checkResult">状态选择</label>
+            <select id="checkResult" name="checkResult" class="txt">
+                <option value="2">已处理</option>
+                <option value="3">废弃</option>
+            </select>
+        </div>
+        <div class="row">
+            <label class="labelTxt" for="memo">处理备注</label>
+            <textarea class="txtarea txt" name="memo" id="memo">如果是已处理，请填写业务人员名字和电话，如果是废弃，请填写废弃原因。</textarea>选填
+        </div>
+        <div class="row">
+            <input type="submit" value="确定" class="btn submitBtn">
+        </div>
+    </form>
+</script>
+<script type="text/template" id="orderDetailTpl">
+    <div class="orderDetail">
+        <p><label class="labelTxt">姓名:</label>${itemContact}</p>
+        <p><label class="labelTxt">电话:</label>${itemMobile}</p>
+        <p><label class="labelTxt">地址:</label>${itemAddress}</p>
+        <p><label class="labelTxt">身份证:</label>${itemUid}</p>
+        <p><label class="labelTxt">业务类型:</label>${category}</p>
+        <p><label class="labelTxt">套餐:</label>${packName}</p>
+        <p><label class="labelTxt">生效时间:</label>${itemMemo.effect}</p>
+        <p><label class="labelTxt">上报人:</label>${submitterFullname}</p>
+        <p><label class="labelTxt">时间:</label>${submitTime}</p>
+        <p><label class="labelTxt">状态:</label>${checkResult}</p>
+        <p><label class="labelTxt">状态说明:</label>${itemMemo.memo}</p>
+    </div>
+</script>
+<script type="text/template" id="selectElTpl">
+    <option value="">全部</option>
+    {@each list as l}
+        {@if l.fullname}
+            <option value="${l.id}">${l.fullname}</option>
+        {@else}
+            <option value="${l.id}">${l.name}</option>
+        {@/if}
+    {@/each}
+</script>
+
+#include("/header.html")
+<!--<div class="topHeader">
+    <h1 class="logo">
+        <a href="#">
+            长沙铁通
+        </a>
+    </h1>
+</div>-->
+
+<div class="main">
+
+    #include("/menu.html")
+    <!--<div class="verticalMenu" id="menu">
+        <ul>
+            <li><a href="s/bizPack">套餐管理</a></li>
+            <li><a href="s/user">用户管理</a></li>
+            <li><a href="s/orderItem">订单管理</a></li>
+        </ul>
+    </div>-->
+
+    <div class="content">
+        <div class="row">
+            <label class="labelTxt dateInputLabel">姓名/电话/身份证：</label>
+            <input type="text" class="txt txtWidthLimit200" id="searchContent">
+            <label class="labelTxt dateInputLabel">开始日期：</label>
+            <input type="text" class="txt dateInput" id="startDate">
+            <label class="labelTxt dateInputLabel">结束日期：</label>
+            <input type="text" class="txt dateInput" id="endDate">
+        </div>
+        <div class="row">
+            <label>业务类型：</label>
+            <select id="categorySelect" class="searchSelect">
+                <option value="">全部</option>
+                <option value="1">宽带</option>
+                <option value="2">光纤</option>
+                <option value="3">TD无线固话</option>
+            </select>
+            <!--<label>套餐：</label>
+            <select id="packSelect" class="searchSelect">
+
+            </select>-->
+            &nbsp;&nbsp;
+            <label>上报人：</label>
+            <select id="userSelect" class="searchSelect">
+
+            </select>
+
+        </div>
+        <div class="row">
+            <input type="button" class="btn" id="searchBtn" value="搜索">
+            &nbsp;&nbsp;
+            <input type="button" class="btn" id="allData" value="全部数据">
+        </div>
+        <table id="orderTable">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>地址</th>
+                <th>业务类型</th>
+                <th>套餐</th>
+                <th>上报人</th>
+                <th class="checkResult">处理状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+                <td>298</td>
+                <td><a href="#" class="check">详情</a>|<a href="#" class="check">处理</a>|<a href="#" class="check">删除</a></td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="popWindow" class="popWindow hidden">
+    <div class="toolbar">
+        <a href="#" id="closePopWindow">关闭</a>
+    </div>
+
+    <div class="popWindowContent" id="popWindowContent">
+        <!--<form action="s/orderItem/check/${orderId}" type="post" id="orderOptForm">
+            <div class="row">
+                <label class="labelTxt" for="checkResult">状态选择</label>
+                <select id="checkResult" name="checkResult" class="txt">
+                    <option value="proxy">已处理</option>
+                    <option value="proxy">废弃</option>
+                </select>
+            </div>
+            <div class="row">
+                <label class="labelTxt" for="itemMemo">处理备注</label>
+                <textarea class="txtarea txt" name="itemMemo" id="itemMemo">如果是已处理，请填写业务人员名字和电话，如果是废弃，请填写废弃原因。</textarea>选填
+            </div>
+            <div class="row">
+                <input type="submit" value="确定" class="btn submitBtn">
+            </div>
+        </form>-->
+    </div>
+</div>
+
+#include("/footer.html")
+
+</body>
+</html>

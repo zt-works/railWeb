@@ -1,0 +1,434 @@
+body{
+    margin:0px;
+    padding: 0px;
+    font-family:"微软雅黑", "黑体", Arial, "Times New Roman", Verdana;
+    color:#b5b5b5;
+    min-width: 1024px;
+    font-size: 14px;
+}
+*:focus {
+    outline: none;
+}
+a{
+    text-decoration: none;
+    color: #33b5e5;
+}
+a:hover{
+    color:#0261B8;
+    cursor: pointer;
+}
+label{
+    color: #b5b5b5;
+}
+img{
+    border:none;
+}
+ul{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+}
+select{
+    height: 30px;
+    width:150px;
+    color: #FF3399;
+    background: #f9f9f9;
+    border:1px #ccc solid;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding-left: 10px;
+}
+.labelTxt{
+    font-size: 14px;
+    color:#33b5e5;
+    display: inline-block;
+    white-space: nowrap;
+    width: 15%;
+    min-width: 75px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    text-align: left;
+}
+.dateInputLabel{
+    width:auto
+}
+
+/*
+*按钮
+*/
+.btn{
+    min-width: 150px;
+    padding:0px 5px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    background: #33b5e5;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    color:#fff;
+    border-radius: 5px;
+}
+.btn:hover{
+    background:#0261B8;
+    color:#fff;
+}
+
+/*
+* 排序
+*/
+.DES,.ASC{
+    display: inline-block;
+    padding-right: 15px;
+}
+.DES.active{
+    color:#33b5e5;
+    background: url(../../images/app/sortDown.png) no-repeat right;
+}
+.ASC.active{
+    color:#33b5e5;
+    background: url(../../images/app/sortUp.png) no-repeat right;
+}
+.DES:hover{
+    color:#0261B8;
+    background: url(../../images/app/sortDownHover.png) no-repeat right;
+}
+.ASC:hover{
+    color:#0261B8;
+    background: url(../../images/app/sortUpHover.png) no-repeat right;
+}
+
+/*
+*文本
+*/
+.txt{
+    width: 45%;
+    height: 40px;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-left:5px;
+    border:1px solid #f2f2f2;
+    background: #f9f9f9;
+}
+.txtarea{
+    height: 100px;
+    resize:vertical;
+    font-family: "微软雅黑", "黑体", Arial, "Times New Roman", Verdana;
+}
+.txtWidthLimit200{
+    width: 200px;
+}
+.txtWidthLimit100{
+    width: 100px;
+}
+.searchTxt{
+    background: url(../../images/app/search.png) no-repeat 11px center #f9f9f9;
+    padding-left: 40px;
+    width: 25%;
+    border-radius: 8px;
+    line-height: 40px;
+}
+.dateInput{
+    width:150px;
+}
+
+/*
+*主体框架
+*/
+.main{
+    background: #fff;
+    width: 80%;
+    min-width: 1024px;
+    min-height:480px;
+    margin: 20px auto 0px auto;
+    border-radius: 5px 5px 0px 0px;
+}
+.content{
+    padding: 40px 20px 50px 40px;
+    color:#b5b5b5;
+    margin-left: 150px;
+    min-height: 400px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: url(../../images/app/verticalShadow.png) no-repeat left;
+    background-size: 22px 100%;
+}
+
+/*
+* Tab页
+*/
+.tab{
+    margin-left: 20px;
+    position: relative;
+    bottom:-1px;
+    z-index: 2;
+}
+.tab .tabItem{
+    display: inline-block;
+    border-width: 1px;
+    border-style:solid;
+    border-color:#ccc;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    width:100px;
+    background: #fff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.tab .tabItem.active{
+    border-width: 1px 1px 0px 1px;
+    border-style:solid;
+    border-color:#ccc;
+}
+.tab .tabItem.active a{
+    color:#0261B8;
+}
+.tabPanel{
+    border: 1px solid #ccc;
+    padding:10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 350px;
+}
+
+
+/**
+*logo
+*/
+.logo{
+    width: 275px;
+    height: 52px;
+    margin: 0px auto 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+.topHeader{
+    background: #fff;
+    height: 130px;
+    position: relative;
+    padding-top: 25px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px #666;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/*
+* 菜单栏模块
+*/
+.verticalMenu{
+    width: 150px;
+    white-space:nowrap;
+    padding:40px 40px;
+    position: absolute;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    min-height: 500px;
+}
+.verticalMenu li{
+    width:100px;
+    margin:0px 10px 0px 0px;
+    text-align: left;
+    vertical-align: top;
+    height: 40px;
+    line-height: 40px;
+}
+.verticalMenu li a.active,.verticalMenu li a:hover{
+    cursor:pointer;
+    color:#0261B8;
+}
+
+
+/*
+*行模块
+*/
+.row{
+    margin: 20px 0px;
+}
+.row .sortPanel{
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 80px;
+}
+.row .txtarea{
+    height: 100px;
+    resize:vertical;
+    font-family: "微软雅黑", "黑体", Arial, "Times New Roman", Verdana;
+}
+.row .radios{
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+.row .tips{
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    vertical-align: top;
+}
+.row .rowContent{
+    width: 70%;
+    display: inline-block;
+}
+.row .rowContent .txt{
+    width: 71.5%;
+}
+.row .unit{
+    line-height: 40px;
+}
+.row .requiredFlag{
+    vertical-align: top;
+    color: #FF3399;
+    font-size: 18px;
+}
+.row ul{
+    margin: 10px;
+}
+.row .rowContent ul{
+    width: 71.5%;
+}
+.row ul li{
+    display: inline-block;
+}
+.row .mceEditor{
+    display: inline-block;
+    width: 71%;
+}
+.row .squareImg{
+    width: 150px;
+}
+.row .submitBtn{
+    width: 45%;
+    margin-left: 15.5%;
+}
+.row hr{
+    height:1px;
+    border:none;
+    border-top:1px solid #eee;
+}
+
+/*
+*表格内容
+*/
+table.dataTable{
+    color:#b5b5b5;
+    font-size: 14px;
+    width: 100%;
+}
+table.dataTable thead{
+    background: #f9f9f9;
+}
+table.dataTable thead th{
+    color:#33b5e5;
+    border: none;
+    font-weight: normal;
+}
+table.dataTable thead th,table.dataTable td{
+    padding:5px;
+    text-align: center;
+}
+table.dataTable .rowSelect{
+    width: 150px;
+}
+table.dataTable .title{
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.paging_full_numbers a.paginate_button{
+    background: #f9f9f9;
+}
+.paging_full_numbers{
+    margin-top: 10px;
+}
+
+/**
+* 弹出层
+*/
+.popWindow{
+    position: absolute;
+    top:100px;
+    width: 70%;
+    border-radius: 5px 5px 0px 0px;
+    left:15%;
+    z-index: 9999;
+    background: #fff;
+    box-shadow:0px 0px 8px #878787;
+}
+.popWindow .toolbar{
+    padding:20px 20px 20px 30px;
+    width:30px;
+    margin-left: auto;
+}
+.popWindow .popWindowContent{
+    padding:40px;
+}
+
+.orderDetail p{
+    line-height: 40px;
+}
+
+/*
+* 遮盖层
+*/
+.blackout{
+    position: fixed;
+    z-index:9998;
+    background: #ccc;
+    width: 100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+    opacity: 0.5;
+}
+
+/*
+*错误提示
+*/
+
+label.error{
+    color: #FF3399;
+    background: url(../../images/app/error.png) no-repeat 5px center #fff;
+    position: relative;
+    padding:0px 5px 0px 35px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius:5px;
+    min-height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    top: 40px;
+    left: -100px;
+    font-size: 12px;
+    width: 200px;
+}
+
+
+
+/*
+*常用类 ,放在最后面，考虑到权重
+*/
+.hidden{
+    display: none !important;
+}
+.asInBlock{
+    display: inline-block;
+}

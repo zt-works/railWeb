@@ -1,0 +1,73 @@
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; LIST-STYLE-TYPE: none; BORDER-BOTTOM-STYLE: none
+}
+
+
+
+.con UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; LIST-STYLE-TYPE: none; BORDER-BOTTOM-STYLE: none
+}
+.con LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; LIST-STYLE-TYPE: none; BORDER-BOTTOM-STYLE: none
+}
+
+.con A:hover {
+	COLOR: #000000
+}
+.con A {
+	FONT-SIZE: 12px; COLOR: #696969; TEXT-DECORATION: none;
+}
+
+
+
+/*.QQbox {
+	Z-INDEX: 99; RIGHT: 0px; WIDTH: 178px; POSITION: absolute; TOP: 100px
+}*/
+.QQbox {
+    Z-INDEX: 99; RIGHT: 0px; WIDTH: 178px; POSITION: fixed; TOP: 100px
+}
+.QQbox .press {
+	RIGHT: 0px; WIDTH: 33px; CURSOR: pointer; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; POSITION: absolute; HEIGHT: 158px; BORDER-BOTTOM-STYLE: none
+}
+.QQbox .Qlist {
+	BACKGROUND: url(../../images/qq/qq_listbg.gif) repeat-y -155px 0px; LEFT: 0px; WIDTH: 145px; POSITION: absolute
+}
+.QQbox .Qlist .t {
+	FONT-SIZE: 1px; FLOAT: right; WIDTH: 145px; HEIGHT: 6px
+}
+/*修改了.b属性文字居中,颜色和高度*/
+.QQbox .Qlist .b {
+	FONT-SIZE: 16px; FLOAT: right; WIDTH: 145px; HEIGHT: 30px;text-align: center;color:#ffffff;padding-top:5px
+}
+.QQbox .Qlist .t {
+	BACKGROUND: url(../../images/qq/qq_listbg.gif) no-repeat left 50%
+}
+/*修改了.b的背景图y重复*/
+.QQbox .Qlist .b {
+	BACKGROUND: url(../../images/qq/qq_listbg.gif) repeat-y;
+}
+.QQbox .Qlist .con {
+	BACKGROUND: #fff; MARGIN: 0px auto; WIDTH: 90%
+}
+.QQbox .Qlist .con H2 {
+	BORDER-RIGHT: #0261B8 1px solid;
+    BORDER-TOP: #0261B8 1px solid;
+    BACKGROUND: url(../../images/qq/qq_listbg.gif) repeat-y -163px 0px;
+    FONT: bold 12px/22px "微软雅黑";
+    BORDER-LEFT: #0261B8 1px solid;
+    COLOR: #fff;
+    BORDER-BOTTOM: #0261B8 1px solid;
+    HEIGHT: 22px; TEXT-ALIGN: center
+}
+.QQbox .Qlist .con UL {
+	
+}
+.QQbox .Qlist .con UL LI {
+	 BACKGROUND: #ffffff; PADDING: 5px; HEIGHT:20px; MARGIN:5px;
+}
+.QQbox .Qlist .con UL LI IMG{
+    VERTICAL-ALIGN: bottom;
+}
+.QQbox .Qlist .con UL LI.odd {
+	BACKGROUND: #fff
+}

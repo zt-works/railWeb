@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    #include("/baseUrl.html")
+    <!--<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <base id="baseUrl" href="http://localhost/railWeb/">-->
+
+    <link type="text/css" rel="stylesheet" href="css/lib/jquery.toastmessage.css">
+    <link type="text/css" rel="stylesheet" href="css/lib/jquery.dataTables.css">
+    <link type="text/css" rel="stylesheet" href="css/src/common.css">
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/juicer-min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/src/config.js"></script>
+    <script type="text/javascript" src="js/src/userMgr.js"></script>
+    <script>
+        var href="s/user";
+    </script>
+</head>
+<body>
+
+#include("/header.html")
+
+
+<div class="main">
+
+    #include("/menu.html")
+
+    <div class="content">
+
+        <div class="row">
+            <input type="text" class="searchTxt txt" id="searchContent">
+        </div>
+        <div class="row">
+            <a class="btn" href="s/user/add">新建用户</a>
+        </div>
+        <table id="userTable">
+            <thead>
+            <tr>
+                <th>用户名</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>角色</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+                <td>dddddddd</td>
+                <td>298</td>
+                <td><a href="#" class="check">删除</a></td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+#include("/footer.html")
+
+</body>
+</html>

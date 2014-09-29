@@ -1,0 +1,167 @@
+body{
+    padding:0px;
+    margin:0px;
+    font-size: 14px;
+    font-family: "Arail","微软雅黑","黑体";
+    background: #fff;
+}
+/**
+*界面元素
+*/
+a{
+    text-decoration: none;
+    color:#b5b5b5;
+}
+ul{
+    margin: 0px;
+    padding:0px;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+/**
+*主体布局
+*/
+.main{
+    min-width: 960px;
+    max-width: 1220px;
+    margin:auto;
+}
+.header{
+    position: relative;
+    border:1px solid #33b5e5;
+    background: url(../../images/app/topBg.gif) repeat-x;
+}
+.center{
+    position: relative;
+    font-size: 0px;
+}
+.left{
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+.right{
+    display: inline-block;
+    width: 82%;
+    margin-left: 3%;
+    font-size: 14px;
+}
+
+/**
+*logo
+*/
+.logo{
+    margin:0px auto 0px 30px;
+    width: 450px;
+}
+.logo a{
+    background: url(../../images/app/logo.jpg) no-repeat left 10px;
+    display: block;
+    height: 90px;
+    padding-left: 100px;
+    line-height: 90px;
+    color: #fff;
+}
+/**
+*操作菜单
+*/
+.optMenu{
+    position: absolute;
+    right:20px;
+    bottom:50px;
+}
+.optMenu li{
+    margin-right:20px;
+}
+.optMenu li a{
+    color:#fff;
+}
+
+/**
+* 主要业务菜单
+*/
+.mainMenu{
+    background: #33b5e5;
+    padding:10px 10px 10px 10%;
+}
+.mainMenu li a{
+    color:#0261B8;
+    font-size: 16px;
+}
+.mainMenu li a.active,.mainMenu li a:hover{
+    color:#fff;
+}
+
+/**
+*栏目
+*/
+.section{
+    border:1px solid #33b5e5;
+    margin-top:20px;
+}
+.section .sectionTitle{
+    padding:5px 30px;
+    color:#fff;
+    margin:0px;
+    font-size: 16px;
+    background: #33b5e5;
+}
+.section .sectionContent{
+    padding:5px 2%;
+}
+
+/**
+*资费套餐
+*/
+.businessList{
+    text-align: center;
+}
+.businessList li{
+    width: 95%;
+    margin:2%;
+    vertical-align: top;
+}
+.businessList li img{
+    width: 100%;
+}
+
+/**
+*联系我们
+*/
+.contact{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 100px;
+}
+.appDown{
+    display: inline-block;
+    width:150px;
+}
+.appDown img{
+    width: 100%;
+    height: auto;
+}
+.appDown p{
+    margin:0px;
+    text-align: center;
+    font-size: 10px;
+}
+
+/**
+*底部
+*/
+.bottomImg{
+    width: 100%;
+    height: auto;
+    margin-top:20px;
+}
+.footer{
+    margin-top:20px;
+    text-align: center;
+}
+
+
